@@ -1,17 +1,17 @@
 {
   "name": "@mendix/mendix-hybrid-app-template",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Mendix PhoneGap Build app template",
   "scripts": {
     "init": "node init",
     "install": "npm run init",
     "package": "webpack",
-    "phonegap": "cd build && phonegap",
-    "plugin": "npm run phonegap -- plugin",
-    "platform": "npm run phonegap -- platform",
-    "build": "npm run phonegap -- build",
-    "build:ios": "npm run phonegap -- build ios",
-    "start": "npm run phonegap -- run",
+    "cordova": "cd build && cordova",
+    "plugin": "npm run cordova -- plugin",
+    "platform": "npm run cordova -- platform",
+    "build": "npm run cordova -- build",
+    "build:ios": "npm run cordova -- build ios",
+    "start": "npm run cordova -- run",
     "package:x86": "npm run package -- --env.x86",
     "package:x86_64": "npm run package -- --env.x86_64",
     "package:arm": "npm run package -- --env.arm",
@@ -21,8 +21,8 @@
     "platform:ios": "npm run platform -- add ios && cd build/platforms/ios",
     "platform:all": "npm run platform:android && npm run platform:ios",
     "prepare:all": "npm run prepare:android && npm run prepare:ios",
-    "prepare:android": "npm run phonegap -- prepare android",
-    "prepare:ios": "npm run phonegap -- prepare ios && cd build/platforms/ios",
+    "prepare:android": "npm run cordova -- prepare android",
+    "prepare:ios": "npm run cordova -- prepare ios && cd build/platforms/ios",
     "build:release": "npm run build -- --release",
     "start:emulator": "npm run start -- --emulator",
     "start:device": "npm run start -- --device"
@@ -41,15 +41,16 @@
     "/*.md"
   ],
   "dependencies": {
-    "@mendix/mendix-hybrid-app-base": "^5.0.0",
+    "@mendix/mendix-hybrid-app-base": "^6.0.0",
     "global": "^4.3.2",
     "mustache-loader": "^1.4.0"
   },
   "devDependencies": {
-    "phonegap": "9.0.0",
-    "shelljs": "^0.7.7",
-    "webpack": "^3.4.1",
-    "webpack-merge": "^4.0.0"
+    "cordova": "^10.0.0",
+    "shelljs": "^0.7.8",
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-merge": "^5.7.3"
   },
   "repository": {
     "type": "git",
@@ -57,8 +58,8 @@
   },
   "license": "Apache-2.0",
   "author": {
-    "name": "Kevin Vlaanderen",
-    "email": "kevin.vlaanderen@mendix.com",
-    "url": "https://developer.mendixcloud.com/link/profile/15218"
+    "name": "Mendix",
+    "email": "support@mendix.com",
+    "url": "https://support.mendix.com"
   }
 }
